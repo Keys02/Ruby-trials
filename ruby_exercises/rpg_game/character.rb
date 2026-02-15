@@ -21,8 +21,8 @@ class Character
   def alive?
     health > 0 ? True : False
   end
-  
-  def apply_status(effect)
+
+  def end_turn
     
   end
 end
