@@ -1,10 +1,13 @@
-family_name = 'Owusu'
-my_name = 'Chris'
+class ProcExample
+  def pass_in_block(&action)
+    @stored_proc = action
+  end
 
-my_name = family_name
-puts "First my name: #{my_name}"
-family_name = 'Agyemang'
+  def use_proc(parameter)
+    @stored_proc.call(parameter)
+  end
+end
 
-puts "Family name: #{family_name}"
-puts "My name: #{my_name}"
-
+eg = ProcExample.new
+eg.pass_in_block {  |param| puts "The parameter is #{param}" }
+eg.use_proc(99)
